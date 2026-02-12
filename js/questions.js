@@ -41,12 +41,12 @@ var QUESTIONS = [
     text: '\u00bfCu\u00e1l es tu tipo de pasta favorita?',
     options: [
       {
-        text: 'Fettuccine Alfredo',
-        response: '\u00a1Excelente elecci\u00f3n! \ud83d\ude0b'
+        text: 'Cacio e Pepe',
+        response: '\u00a1Excelente elecci\u00f3n! Simple pero perfecta \ud83d\ude0b'
       },
       {
-        text: 'Spaghetti Carbonara',
-        response: 'Un cl\u00e1sico. Tienes buen gusto \ud83d\udc4c'
+        text: 'Pappardelle Quattro Formaggi',
+        response: 'Cuatro quesos... tienes buen gusto \ud83d\udc4c'
       },
       {
         text: 'No me gusta la pasta',
@@ -54,7 +54,7 @@ var QUESTIONS = [
         eliminate: true
       },
       {
-        text: '\u00bfLasagna cuenta?',
+        text: '\u00bfPasticho cuenta?',
         response: 'Siempre cuenta. \ud83d\ude4c'
       }
     ]

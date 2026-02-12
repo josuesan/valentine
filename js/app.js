@@ -197,12 +197,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
       setTimeout(function() {
         advanceQuestion();
-      }, 1500);
+      }, 3000);
     } else {
       // Advance directly
       setTimeout(function() {
         advanceQuestion();
-      }, 500);
+      }, 1000);
     }
   }
 
@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
         loadingText.offsetHeight;
         loadingText.style.animation = 'fadeInUp 0.4s ease-out';
         i++;
-        setTimeout(showNextMessage, 800);
+        setTimeout(showNextMessage, 1200);
       } else {
         // Show the card
         revealLoading.classList.add('hidden');
