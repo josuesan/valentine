@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#E91E63">
+  <meta property="og:title" content="Algo especial para ti...">
+  <meta property="og:description" content="Toca para descubrir tu sorpresa de San Valentin">
+  <meta property="og:type" content="website">
+  <title>Para ti, Bere</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Corazones flotantes de fondo -->
+  <div id="floating-hearts" aria-hidden="true"></div>
+
+  <main id="app">
+
+    <!-- PANTALLA 1: LANDING -->
+    <section id="landing" class="screen active">
+      <div class="screen-content">
+        <div class="heartbeat-container">
+          <svg class="heart-icon heartbeat" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </div>
+        <h1 class="landing-title">Tengo algo importante que preguntarte...</h1>
+        <button id="btn-start" class="btn btn-primary">Toca para continuar</button>
+      </div>
+    </section>
+
+    <!-- PANTALLA 2: PROPUESTA -->
+    <section id="proposal" class="screen">
+      <div class="screen-content">
+        <h1 class="proposal-title">Bere, <br>&iquest;quieres ser mi San Valent&iacute;n?</h1>
+        <div class="proposal-buttons">
+          <button id="btn-yes" class="btn btn-yes">&iexcl;S&iacute;, obvio!</button>
+          <button id="btn-no" class="btn btn-no">No</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 3: PREGUNTAS -->
+    <section id="questions" class="screen">
+      <div class="screen-content">
+        <div id="progress-bar" class="progress-bar"></div>
+        <div id="question-card" class="question-card">
+          <h2 id="question-text" class="question-text"></h2>
+          <p id="question-response" class="question-response hidden"></p>
+          <div id="question-options" class="question-options"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 4: REVEAL -->
+    <section id="reveal" class="screen">
+      <div class="screen-content">
+        <!-- Fase loading -->
+        <div id="reveal-loading" class="reveal-loading">
+          <div class="spinner-heart">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </div>
+          <p id="loading-text" class="loading-text">Analizando compatibilidad...</p>
+        </div>
+
+        <!-- Fase tarjeta -->
+        <div id="reveal-card" class="reveal-card hidden">
+          <div class="card-inner">
+            <div class="card-front">
+              <svg class="card-heart" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+              <span class="card-question">?</span>
+            </div>
+            <div class="card-back">
+              <p class="card-label">Nuestra cita perfecta:</p>
+              <h2 class="card-restaurant">Andreapastificio</h2>
+              <div class="card-details">
+                <p>14 de Febrero</p>
+                <p>7:00 PM</p>
+              </div>
+              <p class="card-tagline">Una noche italiana para los dos</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Boton final -->
+        <button id="btn-date" class="btn btn-primary btn-date hidden">&iexcl;Es una cita!</button>
+
+        <!-- Pantalla de cierre -->
+        <div id="closing" class="closing hidden">
+          <svg class="closing-heart" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <h1 class="closing-text">No puedo esperar para verte, Bere</h1>
+          <p class="closing-subtext">Te quiero</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
+  <script src="js/questions.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
